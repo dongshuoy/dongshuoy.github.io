@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-09T07:49:11.916Z</updated>
+  <updated>2019-04-09T08:33:27.887Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue踩坑总结 &amp; 优化点</title>
+    <link href="http://yoursite.com/2019/04/09/vue/"/>
+    <id>http://yoursite.com/2019/04/09/vue/</id>
+    <published>2019-04-09T08:07:20.000Z</published>
+    <updated>2019-04-09T08:33:27.887Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近连着做了好几个vue项目，从0到版本迭代，vue教程算是好理解，把vue官方文档看一遍下来，基本上不会有什么大问题（嗯如果你看的够仔细够透彻的话），此篇是记录vue踩过的坑以及可以优化的地方。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-路由变化页面数据不刷新问题&quot;&gt;&lt;a href=&quot;#1-路由变化页面数据不刷新问题&quot; class=&quot;headerlink&quot; title=&quot;1.路由变化页面数据不刷新问题&quot;&gt;&lt;/a&gt;1.路由变化页面数据不刷新问题&lt;/h1&gt;&lt;p&gt;出现这种情况是因为依赖路由的params参数获取写在created生命周期里面,因为相同路由二次甚至多次加载的关系 没有达到监听，退出页面再进入另一个文章页面并不会运行created组件生命周期,导致文章数据还是第一次进入的数据&lt;/p&gt;
+&lt;p&gt;解决方法：watch监听路由是否变化&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;watch: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; // 方法1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;apos;$route&amp;apos; (to, from) &amp;#123; //监听路由是否变化&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if(this.$route.params.articleId)&amp;#123;// 判断条件1  判断传递值的变化&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      //获取文章数据&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  //方法2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;apos;$route&amp;apos;(to, from) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if (to.path == &amp;quot;/page&amp;quot;) &amp;#123;    /// 判断条件2  监听路由名 监听你从什么路由跳转过来的&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.message = this.$route.query.msg     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+  </entry>
   
   <entry>
     <title>study-vue</title>
