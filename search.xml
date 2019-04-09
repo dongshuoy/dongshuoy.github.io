@@ -8,7 +8,7 @@
       <link href="/2019/04/02/study-vue/"/>
       <url>/2019/04/02/study-vue/</url>
       
-        <content type="html"><![CDATA[<div align="center" width="100%"><br><img src="/2019/04/02/study-vue/1.jpg" width="100%" height="100%"><br><!-- ![你想要输入的替代文字](study-vue/1.jpg) --><br></div>]]></content>
+        <content type="html"><![CDATA[<p><div align="center" width="100%"><br><img src="/2019/04/02/study-vue/1.jpg" width="100%" height="100%"><br><!-- ![你想要输入的替代文字](study-vue/1.jpg) --></div></p><h2 id><a href="#" class="headerlink" title></a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun()&#123;</span><br><span class="line">     echo &quot;这是一句非常牛逼的代码&quot;;</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure><p>da</p>]]></content>
       
       
       
